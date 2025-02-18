@@ -1,0 +1,59 @@
+:root {
+  --selection-color: #ab303d;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.selection-color {
+  color: var(--selection-color);
+}
+
+.current-section {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.header {
+  padding: 0 24px 0 24px;
+  height: 80px;
+  box-shadow: rgba(51, 51, 52, 0.559) 0px 2px 6px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sections {
+  gap: 32px;
+}
+
+.title {
+  position: absolute;
+  left: 220px;
+  font-size: 28px;
+}
+
+.header .section-btn {
+  cursor: pointer;
+}
+
+.header .section-btn:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
