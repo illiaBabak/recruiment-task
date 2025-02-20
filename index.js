@@ -7,15 +7,32 @@ const pageSizeSelect = document.getElementsByClassName(
 const intersectionEl = document.getElementsByClassName(
   "intersection-element"
 )[0];
+const mobileMenuBtn = document.getElementsByClassName("mobile-menu")[0];
+const menuWrapper = document.getElementsByClassName("menu-sections-wrapper")[0];
+const menu = document.getElementsByClassName("menu-sections")[0];
 
 let pageSize = pageSizeSelect.value;
 let currentPage = 1;
 let isFetching = false;
 
+const showMenu = () => menuWrapper.classList.remove("hide");
+
+const hideMenu = () => menuWrapper.classList.add("hide");
+
+mobileMenuBtn.addEventListener("click", () =>
+  menuWrapper.classList.toggle("hide")
+);
+
+menuWrapper.addEventListener("click", () => hideMenu());
+
+menu.addEventListener("click", (e) => e.stopPropagation());
+
 // Reset values to prevent duplicates after select change and re-fetching
 pageSizeSelect.addEventListener("change", (e) => {
   currentPage = 1;
   pageSize = e.currentTarget.value;
+
+  observer.observe(intersectionEl);
 
   document.querySelectorAll(".product").forEach((product) => product.remove());
 });
@@ -39,9 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".section-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
+      e.stopPropagation();
 
       const targetId = btn.querySelector("a").getAttribute("href").substring(1);
       const targetElement = document.getElementById(targetId);
+
+      hideMenu();
 
       if (targetElement)
         targetElement.scrollIntoView({ behavior: "smooth", block: "start" });

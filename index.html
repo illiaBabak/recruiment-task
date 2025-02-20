@@ -9,6 +9,18 @@
   </head>
   <body>
     <div class="container">
+      <div class="menu-sections-wrapper mobile hide">
+        <div class="menu-sections">
+          <div class="section-btn">
+            <a href="#actions">Działanie preparatu</a>
+          </div>
+          <div class="section-btn"><a href="#recomendations">Zalecenia</a></div>
+          <div class="section-btn"><a href="#composition">Skład</a></div>
+          <div class="section-btn"><a href="#dosage">Dawkowanie</a></div>
+          <div class="section-btn"><a href="#products">Opinie</a></div>
+        </div>
+      </div>
+
       <header class="header">
         <p class="title">ARTHRO<span class="selection-color">HARD</span></p>
 
@@ -22,6 +34,10 @@
           </div>
         </div>
       </header>
+
+      <div class="mobile-menu">
+        <img class="mobile-menu-icon" src="images/menu.png" alt="menu-icon" />
+      </div>
 
       <div class="sections-wrapper">
         <section class="start-section">
@@ -75,7 +91,7 @@
             </div>
 
             <div class="card">
-              <div class="card-info">
+              <div class="card-info" id="recomendations">
                 <h1 class="card-title">
                   Wygoda - <br />
                   dwa sposoby podawania
@@ -111,18 +127,18 @@
             </div>
 
             <div class="card">
-              <div class="card-info">
+              <div class="card-info" id="dosage">
                 <h1 class="card-title">
                   Skuteczność - <br />
                   skoncentrowana dawka
                 </h1>
                 <hr class="text-hr" />
                 <p class="card-description">
-                  Tylko jedna porcja dziennie. To nie tylko wygoda, ale również
-                  gwarancja, że Twoje zwierzę otrzymuje wszystko, czego
-                  potrzebuje, aby cieszyć się zdrowiem i aktywnością na długo.
-                  Skorzystaj z zalet Arthrohard i zobacz różnicę w komforcie
-                  życia swojego zwierzęcia.
+                  <strong>Tylko jedna porcja dziennie.</strong> To nie tylko
+                  wygoda, ale również gwarancja, że Twoje zwierzę otrzymuje
+                  wszystko, czego potrzebuje, aby cieszyć się zdrowiem i
+                  aktywnością na długo. Skorzystaj z zalet Arthrohard i zobacz
+                  różnicę w komforcie życia swojego zwierzęcia.
                 </p>
               </div>
 
@@ -134,11 +150,54 @@
         </section>
       </div>
 
+      <section class="actions" id="actions">
+        <p class="actions-title">Działanie preparatu</p>
+        <hr class="text-hr" />
+
+        <div class="card-list">
+          <div class="card-list-el">
+            <div class="card-list-icon">1</div>
+            <p>Wsparcie rozwoju chrząstki stawowej</p>
+          </div>
+
+          <div class="card-list-el">
+            <div class="card-list-icon">2</div>
+            <p>Działanie chondroprotekcyjne</p>
+          </div>
+
+          <div class="card-list-el">
+            <div class="card-list-icon">3</div>
+            <p>Zmniejszenie stanu zapalnego i bólu</p>
+          </div>
+
+          <div class="card-list-el">
+            <div class="card-list-icon">4</div>
+            <p>Wzmocnienie stawów</p>
+          </div>
+
+          <div class="card-list-el">
+            <div class="card-list-icon">5</div>
+            <p>Ochrona przed mikrourazami</p>
+          </div>
+
+          <div class="card-list-el">
+            <div class="card-list-icon">6</div>
+            <p>Regeneracja po urazach i zabiegach ortopedycznych</p>
+          </div>
+
+          <div class="card-list-el">
+            <div class="card-list-icon">7</div>
+            <p>Poprawa jakości życia</p>
+          </div>
+        </div>
+      </section>
+
       <section id="composition" class="composition">
         <h2 class="composition-title">Skład w 5 ml</h2>
         <hr class="text-hr" />
 
         <p class="sub-text">Co dają poszczególne składniki:</p>
+        <hr class="text-hr mobile" />
 
         <div class="composition-content">
           <div class="composition-col">
@@ -151,7 +210,7 @@
               <h1 class="component-title">Siarczan glukozaminy</h1>
               <hr class="el-hr" />
               <p class="count">650 mg</p>
-              <p>
+              <p class="component-description">
                 Glukozamina jest naturalnym składnikiem chrząstki. Dodatek
                 glukozaminy przyczynia się do zwiększenia produkcji
                 glikozaminoglikanów (m.in. siarczanu keratanu, heparanu, kwasu
@@ -170,7 +229,7 @@
               <h1 class="component-title">Siarczan chondroityny</h1>
               <hr class="el-hr" />
               <p class="count">300 mg</p>
-              <p>
+              <p class="component-description">
                 Chondroityna, podobnie jak glukozamina, jest składnikiem
                 chrząstki. Chondroityna pomaga zwalczać enzymy, które niszczą
                 chrząstkę, a także pomaga chrząstce zatrzymać wodę, co jest
@@ -187,7 +246,7 @@
               <h1 class="component-title">Kwas hialuronowy</h1>
               <hr class="el-hr" />
               <p class="count">50 mg</p>
-              <p>
+              <p class="component-description">
                 Kwas hialuronowy jest kluczowym składnikiem płynu stawowego,
                 który działa jak smar i amortyzator dla stawów. Suplementacja
                 kwasem hialuronowym może pomóc w utrzymaniu prawidłowej
@@ -196,7 +255,7 @@
             </article>
           </div>
 
-          <div class="composition-col">
+          <div class="composition-col desktop">
             <img
               class="composition-icon"
               src="images/composition.png"
@@ -216,7 +275,7 @@
               <h1 class="component-title">Czarci pazur</h1>
               <hr class="el-hr" />
               <p class="count">250 mg</p>
-              <p>
+              <p class="component-description">
                 Czarci pazur jest rośliną, która ma właściwości przeciwzapalne i
                 przeciwbólowe. Może to pomóc zwierzętom, które doświadczają bólu
                 i stanu zapalnego związanego z problemami ze stawami.
@@ -232,7 +291,7 @@
               <h1 class="component-title">Witamina C</h1>
               <hr class="el-hr" />
               <p class="count">50 mg</p>
-              <p>
+              <p class="component-description">
                 Witamina C jest potężnym przeciwutleniaczem, który może pomóc w
                 ochronie stawów poprzez neutralizację wolnych rodników, które
                 mogą uszkadzać chrząstkę. Ponadto, witamina C odgrywa ważną rolę
@@ -249,13 +308,34 @@
               <h1 class="component-title">MSM</h1>
               <hr class="el-hr" />
               <p class="count">250 mg</p>
-              <p>
+              <p class="component-description">
                 Metylosulfonylometan, czyli MSM, to naturalny związek siarki,
                 który pomaga w utrzymaniu zdrowych stawów poprzez zmniejszenie
                 stanu zapalnego i bólu. MSM może również pomagać w produkcji
                 kolagenu, co przyczynia się do zdrowia chrząstki stawowej.
               </p>
             </article>
+
+            <article class="component hidden mobile">
+              <img
+                class="component-icon"
+                src="images/water.png"
+                alt="component-icon"
+              />
+              <h1 class="component-title">Syrop glukozowo - fruktozowy</h1>
+              <hr class="el-hr" />
+              <p class="count">250 mg</p>
+            </article>
+          </div>
+
+          <div class="composition-col mobile">
+            <img
+              class="composition-icon"
+              src="images/composition.png"
+              alt="composition-icon"
+            />
+
+            <img class="dog-icon hidden" src="images/dog.png" alt="dog-icon" />
           </div>
         </div>
       </section>

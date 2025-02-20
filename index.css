@@ -13,6 +13,22 @@ html {
   box-sizing: border-box;
 }
 
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #a0a0a0;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #808080;
+}
+
 .selection-color {
   color: var(--selection-color);
 }
@@ -25,12 +41,14 @@ html {
 .container {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  background-color: var(--bg-gray);
 }
 
 .header {
   display: flex;
   padding: 0 24px 0 24px;
-  width: 100vw;
+  width: calc(100vw - 48px);
   height: 80px;
   box-shadow: rgba(51, 51, 52, 0.559) 0px 2px 6px;
   align-items: center;
@@ -55,7 +73,7 @@ html {
 
 .title {
   position: absolute;
-  left: 220px;
+  left: 12%;
   font-size: 28px;
   letter-spacing: 1.1px;
 }
@@ -76,10 +94,10 @@ html {
 
 .start-section {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   margin-top: 80px; /* 80px = header height */
   justify-content: center;
-  gap: 10%;
+  gap: 6%;
 }
 
 .start-section-title {
@@ -92,7 +110,7 @@ html {
   display: inline-block;
   border-right: 4px solid var(--selection-color);
   width: fit-content;
-  max-width: 80%;
+  max-width: 90%;
   animation: typing 4s steps(44, end) forwards,
     blink-caret 0.5s step-end infinite;
 }
@@ -126,7 +144,7 @@ html {
   height: 550px;
 }
 
-.start-section-images .start-section-icon {
+.start-section-icon {
   width: 450px;
   height: 550px;
   object-fit: contain;
@@ -229,6 +247,7 @@ html {
 .card-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .card-img {
@@ -237,12 +256,14 @@ html {
   border-radius: 8px;
   position: absolute;
   bottom: 0;
+  object-fit: cover;
 }
 
 .half-card-img {
   width: 150px;
   height: 260px;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .images-container {
@@ -279,6 +300,7 @@ html {
 
 .card-title {
   font-size: 28px;
+  font-weight: normal;
 }
 
 .text-hr {
@@ -321,6 +343,7 @@ html {
   min-height: 100vh;
   align-items: center;
   padding-top: 80px; /* header height */
+  background-color: white;
 }
 
 .composition-content {
@@ -383,7 +406,6 @@ html {
   height: 330px;
   align-items: center;
   text-align: center;
-  position: relative;
 }
 
 .component-icon {
@@ -593,12 +615,15 @@ html {
   0% {
     transform: scaleY(1) rotate(0deg);
   }
+
   49.99% {
     transform: scaleY(1) rotate(135deg);
   }
+
   50% {
     transform: scaleY(-1) rotate(0deg);
   }
+
   100% {
     transform: scaleY(-1) rotate(-135deg);
   }
@@ -689,4 +714,395 @@ html {
 
 .show {
   opacity: 1;
+}
+
+@media only screen and (max-width: 1280px) {
+  .start-section-title {
+    font-size: 36px;
+  }
+
+  .start-section {
+    margin-top: 60px;
+  }
+
+  .header {
+    height: 60px;
+  }
+
+  .title {
+    left: 6%;
+    font-size: 24px;
+  }
+
+  .card-img {
+    width: 200px;
+    height: 210px;
+  }
+
+  .card {
+    width: 320px;
+    height: 460px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-description {
+    font-size: 12px;
+    width: 85%;
+    text-align: center;
+  }
+
+  .images-container {
+    height: 210px;
+  }
+
+  .half-card-img {
+    width: 100px;
+    height: 210px;
+  }
+
+  .dog-icon {
+    width: 300px;
+  }
+
+  .composition-icon {
+    width: 270px;
+    margin-left: 32px;
+  }
+
+  .component,
+  .el-hr {
+    width: 230px;
+  }
+
+  .component-description {
+    font-size: 12px;
+  }
+
+  .composition {
+    padding-inline: 16px;
+  }
+
+  .buy-btn {
+    top: 40%;
+    width: 120px;
+    margin-left: 20px;
+  }
+
+  .card-container {
+    gap: 2%;
+  }
+
+  .component-title {
+    margin-top: 8px;
+    font-size: 18px;
+  }
+
+  .component-icon {
+    height: 30px;
+    width: 30px;
+  }
+
+  .composition {
+    padding-top: 60px;
+  }
+
+  .sub-text {
+    margin: 0;
+  }
+
+  .text-hr {
+    margin-bottom: 4%;
+  }
+
+  .start-section {
+    gap: 2%;
+  }
+
+  .start-section-info {
+    width: 35%;
+  }
+
+  .start-section-description {
+    font-size: 24px;
+  }
+
+  .start-section-icon {
+    width: 350px;
+  }
+
+  .product {
+    width: 290px;
+    height: 290px;
+  }
+
+  .products-list {
+    padding-inline: 80px;
+  }
+
+  .card-list-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+  }
+
+  .card-list {
+    margin-left: 8px;
+  }
+
+  .card-title {
+    margin-bottom: 8px;
+  }
+
+  .card-list-el {
+    font-size: 12px;
+  }
+}
+
+.mobile-menu {
+  display: none;
+  z-index: 30;
+  position: fixed;
+  top: 30px;
+  right: 16px;
+  transform: translate(0, -50%);
+}
+
+.mobile-menu-icon {
+  width: 18px;
+  height: 12px;
+  z-index: 31;
+  position: relative;
+}
+
+.actions {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 60px;
+  background-color: white;
+  padding-bottom: 20px;
+}
+
+.actions .card-list {
+  margin-top: 20%;
+}
+
+.actions-title {
+  font-size: 24px;
+  background: linear-gradient(
+    90.01deg,
+    #111111 2%,
+    #b1b1b1 58.84%,
+    #1a1a1a 90.39%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: flex;
+}
+
+.menu-sections-wrapper {
+  position: fixed;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-color: #edededb1;
+  z-index: 10;
+}
+
+.menu-sections-wrapper.hide {
+  display: none;
+}
+
+.menu-sections {
+  background: rgba(173, 72, 68, 1);
+  width: 80%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 20px;
+  padding-bottom: 32px;
+}
+
+.menu-sections a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+@media only screen and (max-width: 767px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .actions {
+    display: flex;
+  }
+
+  .actions .card-list {
+    margin-top: 12%;
+    margin-left: 0;
+  }
+
+  .actions .card-list-icon {
+    margin-right: 24px;
+    margin-left: 30px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .actions .card-list-el {
+    margin-top: 12px;
+  }
+
+  .header {
+    justify-content: space-between;
+    box-shadow: none;
+  }
+
+  .sections {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .title {
+    position: relative;
+    left: 0;
+    font-size: 18px;
+  }
+
+  .start-section-title {
+    display: none;
+  }
+
+  .start-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .start-section-icon {
+    width: 310px;
+    height: auto;
+  }
+
+  .start-section-info {
+    width: 75%;
+    text-align: center;
+  }
+
+  .start-section-btn {
+    display: none;
+  }
+
+  .sub-start-section-title {
+    font-size: 20px;
+  }
+
+  .start-section-images {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+  }
+
+  .card-container {
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .card {
+    margin-top: 20%;
+    height: 420px;
+  }
+
+  .card-img {
+    border-radius: 0;
+  }
+
+  .half-card-img {
+    border-radius: 0;
+  }
+
+  .products-list {
+    padding-inline: 12px;
+  }
+
+  .products-select-wrapper {
+    width: calc(100% - 54px);
+    flex-direction: column;
+    margin-top: 48px;
+    padding-block: 10%;
+  }
+
+  .select-wrapper,
+  .count-products-select {
+    width: 100%;
+  }
+
+  .products-select-description {
+    margin: 0;
+    width: calc(100% - 16px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product {
+    width: 105px;
+    height: 105px;
+  }
+
+  .composition {
+    margin-top: 24px;
+  }
+
+  .composition-title {
+    font-size: 24px;
+  }
+
+  .composition .sub-text {
+    font-size: 16px;
+    margin-top: 24%;
+    margin-bottom: 24px;
+  }
+
+  .composition-content {
+    flex-direction: column;
+  }
+
+  .composition-col.mobile .dog-icon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .composition-icon {
+    margin-left: 16px;
+  }
 }
