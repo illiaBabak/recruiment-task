@@ -12,14 +12,30 @@ let pageSize = pageSizeSelect.value;
 let currentPage = 1;
 let isFetching = false;
 
+// Reset values to prevent duplicates after select change and re-fetching
 pageSizeSelect.addEventListener("change", (e) => {
   currentPage = 1;
   pageSize = e.currentTarget.value;
 
-  document.querySelectorAll(".product").forEach((item) => item.remove()); //
+  document.querySelectorAll(".product").forEach((product) => product.remove());
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  // This adds animate on scroll page
+  const elementsToAnimate = document.querySelectorAll(".hidden");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  elementsToAnimate.forEach((el) => observer.observe(el));
+
+  // This adds event listeners to buttons to smoothly scroll to their respective sections.
   document.querySelectorAll(".section-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();

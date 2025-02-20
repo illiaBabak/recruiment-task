@@ -10,6 +10,7 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Futura PT", sans-serif;
+  box-sizing: border-box;
 }
 
 .selection-color {
@@ -86,6 +87,37 @@ html {
   letter-spacing: 1.25px;
   font-weight: normal;
   margin-bottom: 32px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 4px solid var(--selection-color);
+  width: fit-content;
+  max-width: 80%;
+  animation: typing 4s steps(44, end) forwards,
+    blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+
+  to {
+    width: 14ch;
+    opacity: 1;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: var(--selection-color);
+  }
 }
 
 .start-section-images {
@@ -100,6 +132,10 @@ html {
   object-fit: contain;
   z-index: 2;
   position: absolute;
+}
+
+.start-section-icon {
+  animation: showFromLeftSide 3.5s forwards;
 }
 
 .start-section-images,
@@ -119,6 +155,7 @@ html {
   -webkit-text-fill-color: transparent;
   font-size: 32px;
   margin-top: 4px;
+  animation: showFromRightSide 3.5s forwards;
 }
 
 .start-section-btn {
@@ -134,6 +171,11 @@ html {
   cursor: pointer;
 }
 
+.btn-wrapper {
+  width: 100%;
+  animation: showFromRightSide 3.5s forwards;
+}
+
 .start-section-btn:hover {
   transform: scale(1.05);
   transition: 0.33s;
@@ -142,6 +184,7 @@ html {
 .sub-description {
   font-size: 18px;
   margin-top: 0;
+  animation: showFromRightSide 3.5s forwards;
 }
 
 .sub-start-section {
@@ -463,17 +506,18 @@ html {
 }
 
 .loader {
+  display: none;
   width: 50px;
   aspect-ratio: 1;
   border-radius: 50%;
   border: 8px solid #514b82;
-  animation: l20-1 0.8s infinite linear alternate, l20-2 1.6s infinite linear;
+  animation: loader 0.8s infinite linear alternate, l20-2 1.6s infinite linear;
   position: fixed;
   right: 8px;
   bottom: 8px;
 }
 
-@keyframes l20-1 {
+@keyframes loader {
   0% {
     clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
   }
@@ -612,4 +656,37 @@ html {
   font-size: 24px;
   width: 30px;
   height: 30px;
+}
+
+@keyframes showFromLeftSide {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes showFromRightSide {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+}
+
+.show {
+  opacity: 1;
 }
