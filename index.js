@@ -1,3 +1,5 @@
+const isMobile = window.innerWidth < 767;
+
 const container = document.getElementsByClassName("container")[0];
 const loader = document.getElementsByClassName("loader")[0];
 const itemsListContainer = document.getElementsByClassName("products-list")[0];
@@ -10,6 +12,7 @@ const intersectionEl = document.getElementsByClassName(
 const mobileMenuBtn = document.getElementsByClassName("mobile-menu")[0];
 const menuWrapper = document.getElementsByClassName("menu-sections-wrapper")[0];
 const menu = document.getElementsByClassName("menu-sections")[0];
+const sections = document.querySelectorAll("[id]");
 
 let pageSize = pageSizeSelect.value;
 let currentPage = 1;
@@ -47,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (entry.isIntersecting) entry.target.classList.add("show");
       });
     },
-    { threshold: 0.3 }
+    { threshold: "0.1" }
   );
 
   elementsToAnimate.forEach((el) => observer.observe(el));
@@ -67,6 +70,37 @@ document.addEventListener("DOMContentLoaded", () => {
         targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
+});
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      // Find all links that correspond to the current section's id
+      const links = document.querySelectorAll(
+        `${isMobile ? ".menu-sections" : ".sections"} .section-btn a[href="#${
+          entry.target.id
+        }"]`
+      );
+
+      if (entry.isIntersecting) {
+        // If the section is in the viewport, add the class]
+
+        links.forEach((link) =>
+          link.parentElement.classList.add("current-section")
+        );
+      } else {
+        // If the section is out of the viewport, remove the class
+        links.forEach((link) =>
+          link.parentElement.classList.remove("current-section")
+        );
+      }
+    });
+  },
+  { threshold: 0.05 }
+);
+
+sections.forEach((section) => {
+  sectionObserver.observe(section);
 });
 
 const hideModal = () => {
