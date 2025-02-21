@@ -394,6 +394,10 @@ body::-webkit-scrollbar-thumb:hover {
   transition: 0.33s;
 }
 
+.bold {
+  font-weight: bolder;
+}
+
 .composition-title {
   background: linear-gradient(
     90.01deg,
@@ -1069,7 +1073,7 @@ body::-webkit-scrollbar-thumb:hover {
   }
 
   .card {
-    margin-top: 20%;
+    padding-top: 20%;
     height: 420px;
   }
 

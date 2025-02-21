@@ -1,4 +1,4 @@
-const isMobile = window.innerWidth < 767;
+const isMobile = window.innerWidth <= 767;
 
 const container = document.getElementsByClassName("container")[0];
 const loader = document.getElementsByClassName("loader")[0];
@@ -64,6 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetId = btn.querySelector("a").getAttribute("href").substring(1);
       const targetElement = document.getElementById(targetId);
 
+      document
+        .querySelectorAll(".section-btn")
+        .forEach((sectionBtn) =>
+          sectionBtn.classList.remove("current-section")
+        );
+
+      btn.classList.add("current-section");
+
       hideMenu();
 
       if (targetElement)
@@ -72,32 +80,43 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      // Find all links that correspond to the current section's id
+const toggleIds = () => {
+  const elements = [
+    { className: "dosage-element", id: "dosage" },
+    { className: "recommendations-element", id: "recommendations" },
+    { className: "actions-element", id: "actions" },
+  ];
+
+  elements.forEach(({ className, id }) => {
+    const element =
+      document.getElementById(id) || document.querySelector(`.${className}`);
+
+    if (!element) return;
+
+    if (isMobile) element.id = id;
+    else element.removeAttribute("id");
+  });
+};
+
+toggleIds();
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      document.querySelectorAll(".section-btn").forEach((btn) => {
+        btn.classList.remove("current-section");
+      });
+
       const links = document.querySelectorAll(
-        `${isMobile ? ".menu-sections" : ".sections"} .section-btn a[href="#${
-          entry.target.id
-        }"]`
+        `.section-btn a[href="#${entry.target.id}"]`
       );
 
-      if (entry.isIntersecting) {
-        // If the section is in the viewport, add the class]
-
-        links.forEach((link) =>
-          link.parentElement.classList.add("current-section")
-        );
-      } else {
-        // If the section is out of the viewport, remove the class
-        links.forEach((link) =>
-          link.parentElement.classList.remove("current-section")
-        );
-      }
-    });
-  },
-  { threshold: 0.05 }
-);
+      links.forEach((link) =>
+        link.parentElement.classList.add("current-section")
+      );
+    }
+  });
+});
 
 sections.forEach((section) => {
   sectionObserver.observe(section);
