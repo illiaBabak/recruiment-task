@@ -80,6 +80,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// paralax effect
+document.addEventListener("DOMContentLoaded", () => {
+  const composition = document.querySelector(".composition");
+
+  const getScrolledPercentage = (element) => {
+    const rect = element.getBoundingClientRect();
+    const elementTop = rect.top;
+
+    const windowHeight = window.innerHeight;
+
+    const scrolledPercentage =
+      Math.max(
+        0,
+        Math.min(1, (windowHeight - elementTop) / element.offsetHeight)
+      ) * 100;
+
+    return scrolledPercentage;
+  };
+
+  window.addEventListener("scroll", () => {
+    const scrolledPercentage = getScrolledPercentage(composition) - 90;
+
+    composition.style.backgroundPosition = `center calc(100% - ${scrolledPercentage}%)`;
+  });
+});
+
 const toggleIds = () => {
   const elements = [
     { className: "dosage-element", id: "dosage" },
@@ -103,6 +129,8 @@ toggleIds();
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
+      if (!entry.target.id) return;
+
       document.querySelectorAll(".section-btn").forEach((btn) => {
         btn.classList.remove("current-section");
       });

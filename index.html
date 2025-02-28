@@ -9,41 +9,41 @@
   </head>
   <body>
     <div class="container">
-      <div class="menu-sections-wrapper mobile hide">
-        <div class="menu-sections">
-          <div class="section-btn">
+      <nav class="menu-sections-wrapper mobile hide">
+        <ul class="menu-sections">
+          <li class="section-btn">
             <a href="#actions">Działanie preparatu</a>
-          </div>
-          <div class="section-btn">
+          </li>
+          <li class="section-btn">
             <a href="#recommendations">Zalecenia</a>
-          </div>
-          <div class="section-btn"><a href="#composition">Skład</a></div>
-          <div class="section-btn"><a href="#dosage">Dawkowanie</a></div>
-          <div class="section-btn"><a href="#products">Opinie</a></div>
-        </div>
-      </div>
+          </li>
+          <li class="section-btn"><a href="#composition">Skład</a></li>
+          <li class="section-btn"><a href="#dosage">Dawkowanie</a></li>
+          <li class="section-btn"><a href="#products">Opinie</a></li>
+        </ul>
+      </nav>
 
       <header class="header">
-        <p class="title">ARTHRO<span class="selection-color">HARD</span></p>
+        <h2 class="title">ARTHRO<span class="selection-color">HARD</span></h2>
 
-        <div class="sections">
-          <div class="section-btn">
-            <a href="#sub-start">CO NAS WYRÓŻNIA</a>
-          </div>
-          <div class="section-btn">
-            <a href="#composition">SKŁAD</a>
-          </div>
-          <div class="section-btn">
-            <a class="bold" href="#products">PRODUKTY</a>
-          </div>
-        </div>
+        <nav class="main-nav">
+          <ul class="sections">
+            <li class="section-btn">
+              <a href="#sub-start">CO NAS WYROŻNIA</a>
+            </li>
+            <li class="section-btn"><a href="#composition">SKŁAD</a></li>
+            <li class="section-btn">
+              <a class="bold" href="#products">PRODUKTY</a>
+            </li>
+          </ul>
+        </nav>
       </header>
 
       <div class="mobile-menu">
         <img class="mobile-menu-icon" src="images/menu.png" alt="menu-icon" />
       </div>
 
-      <div class="sections-wrapper">
+      <main class="sections-wrapper">
         <section class="start-section">
           <div class="start-section-images">
             <img
@@ -70,6 +70,24 @@
         </section>
 
         <section class="sub-start-section">
+          <img
+            class="vector vector-1"
+            src="images/vector.png"
+            alt="vector-icon"
+          />
+
+          <img
+            class="vector vector-2"
+            src="images/vector.png"
+            alt="vector-icon"
+          />
+
+          <img
+            class="vector vector-3 desktop"
+            src="images/vector.png"
+            alt="vector-icon"
+          />
+
           <h2 class="sub-start-section-title" id="sub-start">
             Co wyróżnia nasz preparat
           </h2>
@@ -77,10 +95,22 @@
 
           <div class="card-container hidden">
             <div class="card">
+              <img
+                class="vector vector-4 desktop"
+                src="images/vector-v2.png"
+                alt="vector-icon"
+              />
+
+              <img
+                class="vector vector-5 desktop"
+                src="images/vector-v2.png"
+                alt="vector-icon"
+              />
+
               <div class="card-info">
-                <h1 class="card-title">
+                <h3 class="card-title">
                   Innowacyjny dodatek - <br />Czarciego Pazura
-                </h1>
+                </h3>
                 <hr class="text-hr" />
                 <p class="card-description">
                   Zapewnia dodatkowe wsparcie w zwalczaniu stanów bólowych i
@@ -97,11 +127,23 @@
             </div>
 
             <div class="card" id="recommendations">
+              <img
+                class="vector vector-6"
+                src="images/vector-v2.png"
+                alt="vector-icon"
+              />
+
+              <img
+                class="vector vector-7"
+                src="images/vector-v2.png"
+                alt="vector-icon"
+              />
+
               <div class="card-info">
-                <h1 class="card-title">
+                <h3 class="card-title">
                   Wygoda - <br />
                   dwa sposoby podawania
-                </h1>
+                </h3>
                 <hr class="text-hr" />
                 <div class="card-list">
                   <div class="card-list-el">
@@ -133,11 +175,23 @@
             </div>
 
             <div class="card" id="dosage">
+              <img
+                class="vector vector-8"
+                src="images/vector-v2.png"
+                alt="vector-icon"
+              />
+
+              <img
+                class="vector vector-9"
+                src="images/vector-v2.png"
+                alt="vector-icon"
+              />
+
               <div class="card-info">
-                <h1 class="card-title">
+                <h3 class="card-title">
                   Skuteczność - <br />
                   skoncentrowana dawka
-                </h1>
+                </h3>
                 <hr class="text-hr" />
                 <p class="card-description">
                   <strong>Tylko jedna porcja dziennie.</strong> To nie tylko
@@ -154,10 +208,15 @@
             </div>
           </div>
         </section>
-      </div>
+      </main>
 
       <section class="actions" id="actions">
-        <p class="actions-title">Działanie preparatu</p>
+        <div class="mobile-vectors">
+          <img class="vector-1" src="images/vector.png" alt="vector-icon" />
+          <img class="vector-2" src="images/vector.png" alt="vector-icon" />
+        </div>
+
+        <h2 class="actions-title">Działanie preparatu</h2>
         <hr class="text-hr" />
 
         <div class="card-list">
@@ -199,6 +258,11 @@
       </section>
 
       <section class="composition composition-el" id="composition">
+        <div class="mobile-vectors">
+          <img class="vector-1" src="images/vector.png" alt="vector-icon" />
+          <img class="vector-2" src="images/vector.png" alt="vector-icon" />
+        </div>
+
         <h2 class="composition-title">Skład w 5 ml</h2>
         <hr class="text-hr" />
 
@@ -213,7 +277,7 @@
                 src="images/siarczan.png"
                 alt="component-icon"
               />
-              <h1 class="component-title">Siarczan glukozaminy</h1>
+              <h3 class="component-title">Siarczan glukozaminy</h3>
               <hr class="el-hr" />
               <p class="count">650 mg</p>
               <p class="component-description">
@@ -227,12 +291,25 @@
             </article>
 
             <article class="component hidden">
+              <div class="mobile-vectors">
+                <img
+                  class="vector-1"
+                  src="images/vector.png"
+                  alt="vector-icon"
+                />
+                <img
+                  class="vector-2"
+                  src="images/vector.png"
+                  alt="vector-icon"
+                />
+              </div>
+
               <img
                 class="component-icon"
                 src="images/siarczan.png"
                 alt="component-icon"
               />
-              <h1 class="component-title">Siarczan chondroityny</h1>
+              <h3 class="component-title">Siarczan chondroityny</h3>
               <hr class="el-hr" />
               <p class="count">300 mg</p>
               <p class="component-description">
@@ -249,7 +326,7 @@
                 src="images/kwas.png"
                 alt="component-icon"
               />
-              <h1 class="component-title">Kwas hialuronowy</h1>
+              <h3 class="component-title">Kwas hialuronowy</h3>
               <hr class="el-hr" />
               <p class="count">50 mg</p>
               <p class="component-description">
@@ -268,17 +345,29 @@
               alt="composition-icon"
             />
             <button class="buy-btn">Kup teraz</button>
-            <img class="dog-icon hidden" src="images/dog.png" alt="dog-icon" />
           </div>
 
           <div class="composition-col">
             <article class="component hidden">
+              <div class="mobile-vectors">
+                <img
+                  class="vector-1"
+                  src="images/vector.png"
+                  alt="vector-icon"
+                />
+                <img
+                  class="vector-2"
+                  src="images/vector.png"
+                  alt="vector-icon"
+                />
+              </div>
+
               <img
                 class="component-icon"
                 src="images/pazur.png"
                 alt="component-icon"
               />
-              <h1 class="component-title">Czarci pazur</h1>
+              <h3 class="component-title">Czarci pazur</h3>
               <hr class="el-hr" />
               <p class="count">250 mg</p>
               <p class="component-description">
@@ -294,7 +383,7 @@
                 src="images/C++.png"
                 alt="component-icon"
               />
-              <h1 class="component-title">Witamina C</h1>
+              <h3 class="component-title">Witamina C</h3>
               <hr class="el-hr" />
               <p class="count">50 mg</p>
               <p class="component-description">
@@ -306,12 +395,25 @@
             </article>
 
             <article class="component hidden">
+              <div class="mobile-vectors">
+                <img
+                  class="vector-1"
+                  src="images/vector.png"
+                  alt="vector-icon"
+                />
+                <img
+                  class="vector-2"
+                  src="images/vector.png"
+                  alt="vector-icon"
+                />
+              </div>
+
               <img
                 class="component-icon"
                 src="images/kwas.png"
                 alt="component-icon"
               />
-              <h1 class="component-title">MSM</h1>
+              <h3 class="component-title">MSM</h3>
               <hr class="el-hr" />
               <p class="count">250 mg</p>
               <p class="component-description">
@@ -328,7 +430,7 @@
                 src="images/water.png"
                 alt="component-icon"
               />
-              <h1 class="component-title">Syrop glukozowo - fruktozowy</h1>
+              <h3 class="component-title">Syrop glukozowo - fruktozowy</h3>
               <hr class="el-hr" />
               <p class="count">250 mg</p>
             </article>
@@ -340,15 +442,15 @@
               src="images/composition.png"
               alt="composition-icon"
             />
-
-            <img class="dog-icon hidden" src="images/dog.png" alt="dog-icon" />
           </div>
         </div>
       </section>
 
       <section class="products-section" id="products">
         <div class="products-select-wrapper">
-          <p class="products-select-description">liczba produktów na stronie</p>
+          <p class="products-select-description">
+            liczba produktów на странице
+          </p>
           <div class="select-wrapper">
             <select class="count-products-select">
               <option value="15">15</option>
