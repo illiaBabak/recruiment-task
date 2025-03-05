@@ -559,6 +559,18 @@ body::-webkit-scrollbar-thumb:hover {
   position: relative;
 }
 
+@media only screen and (min-width: 1920px) {
+  .composition {
+    background-size: 30% auto;
+  }
+}
+
+@media only screen and (min-width: 2920px) {
+  .composition {
+    background-size: 20% auto;
+  }
+}
+
 .composition-content {
   display: flex;
   margin-top: 32px;
@@ -652,14 +664,8 @@ body::-webkit-scrollbar-thumb:hover {
   margin-left: 42px;
 }
 
-.composition-icon,
-.dog-icon {
+.composition-icon {
   width: 540px;
-}
-
-.dog-icon {
-  position: absolute;
-  bottom: 0;
 }
 
 .products-section {
@@ -990,10 +996,6 @@ body::-webkit-scrollbar-thumb:hover {
   .half-card-img {
     width: 100px;
     height: 210px;
-  }
-
-  .dog-icon {
-    width: 300px;
   }
 
   .composition-icon {
@@ -1395,16 +1397,10 @@ body::-webkit-scrollbar-thumb:hover {
     flex-direction: column;
   }
 
-  .composition-col.mobile .dog-icon {
-    position: absolute;
-    bottom: 0;
-  }
-
   .composition-icon {
     margin-left: 16px;
   }
 
-  .dog-icon,
   .composition-icon {
     width: 70%;
   }

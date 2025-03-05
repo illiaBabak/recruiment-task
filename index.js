@@ -100,9 +100,20 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.addEventListener("scroll", () => {
-    const scrolledPercentage = getScrolledPercentage(composition) - 90;
+    const scrolledPercentage = getScrolledPercentage(composition) - 100;
 
-    composition.style.backgroundPosition = `center calc(100% - ${scrolledPercentage}%)`;
+    if (scrolledPercentage === 0) {
+      composition.style.backgroundAttachment = "scroll";
+    } else {
+      composition.style.backgroundAttachment = "fixed";
+
+      composition.style.backgroundPosition = `center calc(100% - ${
+        innerHeight > 1600
+          ? scrolledPercentage *
+            (window.innerHeight / (window.innerHeight * -20))
+          : scrolledPercentage
+      }%)`;
+    }
   });
 });
 
