@@ -80,43 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// paralax effect
-document.addEventListener("DOMContentLoaded", () => {
-  const composition = document.querySelector(".composition");
-
-  const getScrolledPercentage = (element) => {
-    const rect = element.getBoundingClientRect();
-    const elementTop = rect.top;
-
-    const windowHeight = window.innerHeight;
-
-    const scrolledPercentage =
-      Math.max(
-        0,
-        Math.min(1, (windowHeight - elementTop) / element.offsetHeight)
-      ) * 100;
-
-    return scrolledPercentage;
-  };
-
-  window.addEventListener("scroll", () => {
-    const scrolledPercentage = getScrolledPercentage(composition) - 100;
-
-    if (scrolledPercentage === 0) {
-      composition.style.backgroundAttachment = "scroll";
-    } else {
-      composition.style.backgroundAttachment = "fixed";
-
-      composition.style.backgroundPosition = `center calc(100% - ${
-        innerHeight > 1600
-          ? scrolledPercentage *
-            (window.innerHeight / (window.innerHeight * -20))
-          : scrolledPercentage
-      }%)`;
-    }
-  });
-});
-
 const toggleIds = () => {
   const elements = [
     { className: "dosage-element", id: "dosage" },
